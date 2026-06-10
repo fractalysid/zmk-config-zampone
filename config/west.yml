@@ -1,0 +1,14 @@
+# Manifest west del layout — usato solo per build "cloud"/standalone.
+# I build LOCALI usano la worktree in upstream/zmk via kb-build (vedi kb-build/README.md),
+# NON questo manifest. ZMK pinnato alla release 0.3.0 per riproducibilità.
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: edf5c0814fd3ea202e43aad2d68fd32e882a518c  # v0.3.0
+      import: app/west.yml
+  self:
+    path: config

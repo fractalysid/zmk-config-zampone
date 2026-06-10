@@ -1,0 +1,11 @@
+# Segreti: Zampone non li usa, ma mai dire mai
+config/secrets.h
+config/pwds.h
+config/emails.h
+
+# Artefatti di build (le UF2 vivono in ../../artifacts/)
+build/
+
+# Editor/varie
+.idea/
+.directory
