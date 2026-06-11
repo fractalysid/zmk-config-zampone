@@ -1,34 +1,41 @@
 # Zampone
 
-Config ZMK del layout **Zampone**: la variante essenziale di
-[Cotechino_34](https://github.com/fractalysid/zmk-config-cotechino_34) per
-**Demetra v2**, tastiera wireless custom su nRF52840 (modulo BMD-340, board ZMK
+ZMK config for the **Zampone** layout: the essential variant of
+[Cotechino_34](https://github.com/fractalysid/zmk-config-cotechino_34) for
+**Demetra v2**, a custom wireless 34-key split keyboard (nRF52840/BMD-340,
+ZMK board module
 [`zmk-keyboard-demetra_v2`](https://github.com/fractalysid/zmk-keyboard-demetra_v2)).
 
-Rispetto a Cotechino_34: base layer **QWERTY** al posto di Colemak-DH, solo i
-sei layer essenziali (default, utility, symbols, num/fn, keyboard, mouse),
-niente macro, niente combo e **niente file segreti** — builda così com'è.
+Compared to Cotechino_34: **QWERTY** base layer instead of Colemak-DH, only
+the six essential layers (default, utility, symbols, num/fn, keyboard, mouse),
+no macros, no combos and **no secret files** — it builds as-is.
 
-![Layout Zampone](Zampone.png)
+![Zampone layout](Zampone.png)
 
-Il sorgente del diagramma è [`Zampone.drawio`](Zampone.drawio).
+The diagram source is [`Zampone.drawio`](Zampone.drawio).
 
-## Layer
+> **Note — ZMK Studio:** this layout targets ZMK v0.3 and does **not** include
+> ZMK Studio support (there is no `&studio_unlock` key, which only exists on
+> ZMK v0.4+). For the Studio-enabled variant of this same keymap, see the
+> user config template
+> [zmk-config-demetra_v2](https://github.com/fractalysid/zmk-config-demetra_v2).
 
-- **default** — QWERTY, mod hold-tap sulla bottom row, tap-dance per accentate
-- **utility** — navigazione, sticky mods, scorciatoie (Space hold)
-- **symbols** — simboli layout italiano, parentesi e valute in tap-dance (Return hold)
-- **num/fn** — numeri e F1-F14 (utility+symbols)
+## Layers
+
+- **default** — QWERTY, hold-tap mods on the bottom row, tap-dances for accented letters
+- **utility** — navigation, sticky mods, shortcuts (hold Space)
+- **symbols** — Italian-layout symbols, paired delimiters and currencies as tap-dances (hold Return)
+- **num/fn** — numbers and F1-F14 (utility+symbols)
 - **keyboard** — bluetooth, media, numpad
-- **mouse** — puntatore e scroll (symbols+keyboard)
+- **mouse** — pointer and scroll (symbols+keyboard)
 
 ## Build
 
-Dal workspace Keyboards (vedi [kb-build](https://github.com/fractalysid/kb-build)):
+From the Keyboards workspace (see [kb-build](https://github.com/fractalysid/kb-build)):
 
 ```bash
-LAYOUT=Zampone ./build-demetra.sh             # entrambe le metà, ZMK v0.3
+LAYOUT=Zampone ./build-demetra.sh             # both halves, ZMK v0.3
 ZMK_DIR=upstream/zmk/v0.4 LAYOUT=Zampone ./build-demetra.sh   # ZMK v0.4 (HWMv2)
 ```
 
-Le UF2 finiscono in `artifacts/demetra_v2/`.
+The UF2 files land in `artifacts/demetra_v2/`.
